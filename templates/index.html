@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DSA Study Buddy</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>DSA Study Buddy</h1>
+        <p>AI-powered assistant for Data Structures & Algorithms learning</p>
+    </div>
+
+    <!-- Main Card -->
+    <div class="card">
+
+        <!-- Input -->
+       <textarea id="inputText" placeholder="Type a DSA topic or LeetCode problem name (e.g., Binary Search, Two Sum, Linked List, DP on Trees)"></textarea>
+        <div class="suggestions">
+        <span onclick="fillExample('Binary Tree')">Binary Tree</span>
+        <span onclick="fillExample('Two Sum')">Two Sum</span>
+        <span onclick="fillExample('Merge Sort')">Merge Sort</span>
+        <span onclick="fillExample('Dynamic Programming')">DP</span>
+        <span onclick="fillExample('Graph BFS')">Graph BFS</span>
+        </div>
+
+
+
+        <!-- Buttons -->
+        <div class="buttons">
+            <button class="explain" onclick="send('explain')">Explain</button>
+            <button class="summarize" onclick="send('summarize')">Summarize</button>
+            <button class="quiz" onclick="send('quiz')">Generate Quiz</button>
+        </div>
+
+        <!-- Status -->
+        <div id="status"></div>
+
+    </div>
+</div>
+
+<script>
+function fillExample(text) {
+    document.getElementById("inputText").value = text;
+}
+
+function send(action) {
+    const text = document.getElementById("inputText").value.trim();
+    const status = document.getElementById("status");
+
+    if (!text) {
+        status.innerText = "Please enter a DSA topic or problem name.";
+        return;
+    }
+
+    status.innerText = "Searching the best matching DSA explanation...";
+
+
+    fetch("/process", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            text: text,
+            action: action
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if (data.redirect) {
+            window.location.href = data.redirect;
+        } else {
+            status.innerText = "No result found.";
+        }
+    })
+    .catch(err => {
+        status.innerText = "Something went wrong. Please try again.";
+    });
+}
+</script>
+
+</body>
+</html>
