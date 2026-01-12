@@ -1,4 +1,4 @@
-# DSA Study Buddy 🧠📘
+#  DSA Study Buddy 🧠📘
 
 An AI-powered web application that helps students learn Data Structures and Algorithms (DSA) by retrieving and explaining relevant problems using machine learning–based text similarity.
 
@@ -38,19 +38,19 @@ Use machine learning for similarity-based matching
 
 Keep the system lightweight and offline (no API dependency)
 
- # 🧠 System Overview
+# 🧠 System Overview
 
-The system follows a Machine Learning–based Information Retrieval approach:
+The system follows a Machine Learning–based Information Retrieval approach.
 
-TF-IDF Vectorization to represent textual data
+Text data is represented using TF-IDF Vectorization
 
-Cosine Similarity to measure relevance
+Relevance is measured using Cosine Similarity
 
-Flask-based backend for processing
+A Flask backend handles request processing
 
-Web-based frontend for interaction
+A web-based frontend enables user interaction
 
-Workflow:
+Workflow
 
 User enters a DSA topic or problem name
 
@@ -60,42 +60,31 @@ TF-IDF converts text into numerical vectors
 
 Cosine similarity compares input with dataset problems
 
-Most relevant problem is selected
+Most relevant problem is identified
 
 Detailed explanation is displayed on a result page
 
- # 🏗️ Architecture
+# 🏗️ Architecture
 
-User Interface (HTML/CSS/JS)
+User Interface (HTML, CSS, JavaScript)
 ⬇
 Flask Backend Server
 ⬇
-Text Preprocessing Module
+Text Preprocessing
 ⬇
-TF-IDF Vectorizer
+TF-IDF Vectorization
 ⬇
-Cosine Similarity Engine
+Cosine Similarity Computation
 ⬇
 LeetCode-based Dataset (CSV)
 ⬇
-Result Generation & Display
+Result Generation and Display
 
- # 🧪 Technologies Used
-Frontend
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Backend
+# 🧪 Tools and Technologies Used
 
 Python
 
 Flask
-
-Machine Learning
 
 Scikit-learn
 
@@ -103,14 +92,71 @@ TF-IDF Vectorizer
 
 Cosine Similarity
 
-Data Handling
-
 Pandas
 
 NumPy
 
-Development Tools
+HTML
+
+CSS
+
+JavaScript
 
 VS Code
 
 GitHub
+
+# 📊 Features
+
+Search by DSA topic or problem name
+
+Offline ML-based similarity matching
+
+Clean and readable explanation page
+
+Dataset-driven approach (no external APIs)
+
+Simple and professional user interface
+
+Fast and lightweight execution
+
+# ⚠️ Limitations
+
+The system retrieves explanations only from the available dataset
+
+It does not dynamically generate new solutions
+
+Accuracy depends on dataset quality and coverage
+
+Not intended as a replacement for competitive programming platforms
+
+# 🧠 Future Enhancements
+
+Support for multiple relevant results
+
+Topic-wise categorization (Arrays, Trees, DP, Graphs, etc.)
+
+Difficulty-based filtering
+
+User authentication and search history
+
+Visual explanations and diagrams
+
+# 👨‍🎓 Academic Declaration
+
+This project was developed for academic and internship purposes as part of an AIML-focused curriculum.
+All outputs are intended for educational demonstration only.
+
+# 📜 License
+
+This project is released for academic and educational use only.
+
+# 🙌 Acknowledgements
+
+LeetCode problem repository
+
+Kaggle open datasets
+
+Scikit-learn documentation
+
+Flask open-source community
